@@ -1,0 +1,230 @@
+// HEADING
+.heading {
+    font-family: pb;
+    text-transform: uppercase;
+
+    &.--h1 {
+        font-size: var(--fs-h1);
+        line-height: normal;
+        letter-spacing: var(--ls-h1);
+        color: var(--cl-main);
+    }
+
+    &.--h2 {
+        font-size: var(--fs-h2);
+        line-height: var(--lh-h2);
+        letter-spacing: var(--ls-h2);
+    }
+
+    &.h3 {
+        font-size: var(--fs-h3);
+        line-height: var(--lh-h3);
+        letter-spacing: var(--ls-h3);
+    }
+}
+
+// BUTTON
+.btnmain {
+    position: relative;
+    width: fit-content;
+    height: var(--height-button);
+
+    @include textBtn;
+    @include midflex;
+
+    gap: 12px;
+    border: 1px solid white;
+    padding: 0 28px;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: var(--cl-main);
+        content: "";
+        z-index: -1;
+
+        @include transition(0.5s);
+    }
+
+    &:hover::before {
+        width: 100%;
+        left: 0;
+        right: auto;
+    }
+
+    @include xs {
+        height: 36px;
+        padding: 0 17px;
+        gap: 8px;
+    }
+}
+
+.--btnvideo {
+    cursor: pointer;
+    color: white;
+    height: 44px;
+    padding: 0 34px;
+    text-transform: uppercase;
+    gap: 10px;
+    margin-top: 48px;
+
+    img {
+        border: 1px solid white;
+        padding: 5px;
+        border-radius: 50%;
+    }
+}
+
+// TEXTBOX
+.textbox {
+    .heading {
+        &.--white-cl {
+            color: var(--cl-white);
+        }
+
+        &.--yellow-cl {
+            color: var(--cl-main);
+        }
+    }
+
+    .desc {
+        margin-bottom: 25px;
+        margin-top: 10px;
+        color: var(--cl-gray);
+
+        &.--white-cl {
+            color: var(--cl-white);
+        }
+    }
+
+    &.--align-left {
+        padding-left: 72px;
+
+        .heading {
+            position: relative;
+            margin-bottom: 5px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                width: 58px;
+                height: 5px;
+                background-color: var(--cl-main);
+                top: 50%;
+                left: -72px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &.--align-right {
+        padding-right: 72px;
+        text-align: right;
+
+        .heading {
+            position: relative;
+            margin-bottom: 5px;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 58px;
+                height: 5px;
+                background-color: var(--cl-main);
+                top: 50%;
+                right: -72px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &.--align-center {
+        text-align: center;
+        margin: 0 auto;
+
+        .heading {
+            position: relative;
+            margin-bottom: 5px;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 58px;
+                height: 5px;
+                background-color: var(--cl-main);
+                bottom: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .desc {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+        }
+    }
+
+    .btnmore {
+        display: inline-flex;
+        gap: 8px;
+        width: fit-content;
+        font-family: pb;
+        font-size: 15px;
+        line-height: normal;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        position: relative;
+        color: black;
+
+        img {
+            @include duration(0.4s);
+        }
+
+        &::after {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background-color: var(--cl-main);
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+        }
+
+        &:hover {
+            img {
+                transform: translateX(12px);
+            }
+        }
+    }
+
+    @include sm {
+        &.--align-left {
+            padding-left: initial;
+
+            .heading {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        &.--align-right {
+            padding-right: initial;
+
+            .heading {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        .btnmore {
+            margin-top: inherit;
+        }
+    }
+}

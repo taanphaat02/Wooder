@@ -1,0 +1,80 @@
+:root {
+    --max-width-page: 2560px;
+    --max-width-container-fluid: 1920px;
+    --max-width-container: calc(1196px + calc(var(--gap) * 2));
+    --gap: 28px;
+
+    // Colors
+    --cl-main: #bea67c;
+    --cl-white: #ffffff;
+    --cl-black: #000000;
+    --cl-gray: #464646;
+
+    // Font-size
+    --fs-h1: 84px;
+    --fs-h2: 46px;
+    --fs-h3: 18px;
+    --fs-button: 15px;
+    --fs-body: 18px;
+    --fs-body-small: 14px;
+
+    //Line-height
+    --lh-h1: normal;
+    --lh-h2: 56px;
+    --lh-h3: 24px;
+    --lh-body: 25px;
+
+    // Letter-spacing
+    --ls-h1: 10.08px;
+    --ls-h2: 4.6px;
+    --ls-h3: 0.72px;
+    --ls-text: 0.36px;
+    --ls-button: 1.5px;
+    --ls-text-small: 0.56px;
+
+    //Height
+    --height-header: 90px;
+    --height-button: 44px;
+
+    //Padding
+    --pd-container: 28px;
+    --pd-container-fluid: 28px;
+    --pd-section: 120px;
+    --duration: 0.4s;
+    --cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
+    --bg-header: linear-gradient(180deg, #000 3%, rgba(0, 0, 0, 0) 100%);
+
+    // RESPINSIVE
+    @include md {
+        --max-width-container: 1140px;
+    }
+
+
+    @include sm {
+        --max-width-container: 960px;
+        --pd-section: 90px;
+        --height-header: 80px;
+    }
+
+
+    @include xs {
+        --max-width-container: 720px;
+        --pd-section: 60px;
+        --height-header: 64px;
+        --gap: 10px;
+        --fs-h1: 5.6rem;
+        --fs-h2: 3.8rem;
+        --fs-h3: 1.6rem;
+        --fs-button: 1.2rem;
+        --fs-body: 1.5rem;
+        --fs-body-small: 1.2rem;
+        --lh-body: 2rem;
+        --lh-h2: 4.2rem;
+        --lh-h3: 2.2rem;
+    }
+
+
+    @include xxs {
+        --max-w-container: 100%;
+    }
+}

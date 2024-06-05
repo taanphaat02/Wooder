@@ -1,0 +1,79 @@
+html {
+    body {
+        width: 100%;
+        max-width: var(--max-width-page);
+        margin: auto;
+        font-family: pr;
+        font-size: var(--fs-body);
+        line-height: var(--lh-body);
+        letter-spacing: var(--ls-text);
+        color: var(--cl-black);
+        scroll-behavior: smooth;
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: var(--max-width-container);
+            padding-left: var(--pd-container);
+            padding-right: var(--pd-container);
+            margin-right: auto;
+            margin-left: auto;
+
+            @include md {
+                max-width: var(--mw-container);
+            }
+        }
+
+        .container-fluid {
+            position: relative;
+            width: 100%;
+            max-width: var(--max-width-container-fluid);
+            padding-left: var(--pd-container);
+            padding-right: var(--pd-container);
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @include xs {
+            .container, .container-fluid {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+
+        &.--hidden {
+            height: 100vh;
+            overflow: hidden;
+        }
+    }
+
+    @include xs {
+        font-size: 62.5%;
+    }
+
+
+    @include sm {
+        font-size: 58%;
+    }
+
+
+    .main {
+        position: relative;
+
+        section {
+            &.--pd {
+                padding-top: var(--pd-section);
+                padding-bottom: var(--pd-section);
+            }
+
+            &.--pdb {
+                padding-bottom: var(--pd-section);
+            }
+
+            &.--pdt {
+                padding-top: var(--pd-section);
+            }
+        }
+    }
+}
